@@ -1,0 +1,40 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+.chip {
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+  position: relative;
+}
+.chip:hover {
+  border-color: var(--navy);
+  box-shadow: var(--shadow-card);
+}
+.chip.active {
+  border-color: var(--green);
+  background: rgba(0,179,122,0.04);
+  grid-column: span 2;
+}
+.chipIcon { font-size: 28px; }
+.chipLabel { font-size: 15px; font-weight: 600; color: var(--navy); }
+.arrow { font-size: 11px; color: var(--muted); margin-left: auto; }
+.expanded {
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.value { font-size: 14px; color: var(--muted); line-height: 1.6; }
+
+@media (max-width: 900px)  { .grid { grid-template-columns: repeat(2, 1fr); } .chip.active { grid-column: 1 / -1; } }
+@media (max-width: 480px)  { .grid { grid-template-columns: 1fr; } .chip.active { grid-column: 1; } }

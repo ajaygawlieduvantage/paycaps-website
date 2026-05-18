@@ -1,0 +1,87 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.card {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 28px 28px 28px 24px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--navy);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow 0.25s, transform 0.25s, border-left-color 0.25s;
+}
+.card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px);
+  border-left-color: var(--green);
+}
+.stars { color: var(--green); font-size: 18px; letter-spacing: 3px; }
+.quote { font-size: 15px; color: var(--text-dark); line-height: 1.7; font-style: italic; flex: 1; }
+.author { display: flex; align-items: center; gap: 12px; }
+.avatar {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.info { display: flex; flex-direction: column; gap: 2px; }
+.name { font-size: 14px; font-weight: 700; color: var(--text-dark); }
+.role { font-size: 13px; color: var(--muted); }
+.industry {
+  font-size: 11px;
+  color: var(--green);
+  font-weight: 600;
+  background: rgba(0,179,122,0.08);
+  padding: 2px 8px;
+  border-radius: 100px;
+  width: fit-content;
+}
+
+/* Logo Strip */
+.logoStrip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 28px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+.merchantLogo {
+  padding: 8px 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  background: var(--bg-light);
+  transition: color 0.2s, border-color 0.2s;
+}
+.merchantLogo:hover { color: var(--navy); border-color: var(--navy); }
+
+@media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 768px) {
+  .logoStrip {
+    gap: 8px;
+    justify-content: flex-start;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .logoStrip::-webkit-scrollbar { display: none; }
+  .merchantLogo { flex-shrink: 0; }
+}

@@ -1,0 +1,65 @@
+.trust {
+  background: var(--footer-bg);
+  position: relative;
+  overflow: hidden;
+}
+.trust::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px; height: 800px;
+  background: radial-gradient(circle, rgba(0,179,122,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+.header h2, .header p { color: var(--white); }
+.overline { font-weight: 600; color: var(--green); margin-bottom: 8px; display: block; }
+.heading { color: var(--white) !important; }
+
+.badgeGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  margin-bottom: 48px;
+}
+.badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 24px 12px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  text-align: center;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: default;
+}
+.badge:hover {
+  background: rgba(0,179,122,0.08);
+  border-color: rgba(0,179,122,0.3);
+}
+.badgeIcon { font-size: 28px; }
+.badgeTitle { font-size: 13px; font-weight: 700; color: var(--white); }
+.badgeDesc { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+
+.statement {
+  max-width: 720px;
+  margin: 0 auto 40px;
+  text-align: center;
+}
+.statement p {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+}
+.ctas {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1024px) { .badgeGrid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 640px)  { .badgeGrid { grid-template-columns: repeat(2, 1fr); } }

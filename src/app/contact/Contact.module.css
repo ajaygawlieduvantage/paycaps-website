@@ -1,0 +1,11 @@
+.grid {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 32px;
+  align-items: start;
+}
+.sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+}

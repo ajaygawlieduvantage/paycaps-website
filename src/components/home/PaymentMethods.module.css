@@ -1,0 +1,56 @@
+.logosGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.logoCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 12px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: default;
+}
+.logoCard:hover {
+  border-color: var(--navy);
+  box-shadow: 0 4px 16px rgba(26,60,110,0.1);
+  transform: translateY(-2px);
+}
+.logoEmoji { font-size: 22px; font-weight: 700; color: var(--navy); }
+.logoName { font-size: 11px; font-weight: 600; color: var(--muted); text-align: center; }
+.more { border-style: dashed; }
+.moreCount { font-size: 22px; font-weight: 700; color: var(--orange); }
+
+.subInfo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+.subPill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  background: var(--bg-light);
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+.subCheck { color: var(--green); font-weight: 700; }
+
+@media (max-width: 900px) { .logosGrid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 560px) {
+  .logosGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 400px) {
+  .logosGrid { grid-template-columns: repeat(2, 1fr); }
+}
