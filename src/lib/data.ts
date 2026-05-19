@@ -209,5 +209,9 @@ export const navLinks = [
   // },
   { label: 'Integrations', href: '/integrations' },
   { label: 'Pricing', href: '/pricing' },
+  { label: 'Blogs', href: '/blogs' },
+  { label: 'Newsroom', href: '/newsroom' },
+  { label: 'Developer Guide', href: '/developers' },
+
   { label: 'About', href: '/about' },
 ];

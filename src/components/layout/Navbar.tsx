@@ -24,7 +24,7 @@ export default function Navbar() {
 
   return (
     <header className={`${styles.navbar} ${scrolled ? styles.scrolled : ''}`}>
-      <div className="container">
+      <div className="nav-can">
         <nav className={styles.inner}>
           {/* Logo */}
           <Link href="/" className={styles.logo}>
